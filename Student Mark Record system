@@ -1,0 +1,30 @@
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    map<string, float> students;
+    int choice;
+    string name;
+    float marks;
+
+    while(true) {
+        cout << "\n1. Add Student\n2. View All\n3. Exit\nEnter choice: ";
+        cin >> choice;
+
+        if(choice == 1) {
+            cout << "Student name: ";
+            cin >> name;
+            cout << "Marks: ";
+            cin >> marks;
+            students[name] = marks;
+        } else if(choice == 2) {
+            for(auto student : students)
+                cout << student.first << " : " << student.second << endl;
+        } else if(choice == 3) {
+            break;
+        } else {
+            cout << "Invalid choice\n";
+        }
+    }
+}
